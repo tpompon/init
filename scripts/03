@@ -7,7 +7,7 @@
 FOLDER_PATH=~/Desktop
 FOLDER_NAME=42PhotoFinder
 
-# - Script (don't touch)- #
+# - Script (don't touch) - #
 
 FULL_PATH=${FOLDER_PATH}/${FOLDER_NAME}
 

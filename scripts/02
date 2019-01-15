@@ -1,3 +1,21 @@
-sudo userdel login
+
+# Check validité commande
+if [ $# != 1 ]; then
+	echo "Usage: $0 [user] (delete user while logged in)"
+fi
+
+# Vérifie si l'utilisateur est connecté
+if ; then
+
+fi
+
+# Kill des processus
+killall -KILL -u $1
+
+# Bloque l'utilisateur
+sudo passwd -l $1
+
+# Suppresion de l'utilisateur
+userdel -r $1
 
 https://technique.arscenic.org/commandes-linux-de-base/la-gestion-des-utilisateurs/article/ajout-et-suppression-d-utilisateurs
