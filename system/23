@@ -1,0 +1,5 @@
+Session graphique :
+- Sur la page de login, entrer l'identifiant et le mot de passe
+
+Session SSH :
+- Utiliser la commande : ssh user:password@ip
