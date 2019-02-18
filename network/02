@@ -1,5 +1,7 @@
 ifconfig en0
 
+#######################################################################
+
 en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
 		options=10b<RXCSUM,TXCSUM,VLAN_HWTAGGING,AV>
 		ether 10:dd:b1:c1:60:7d
@@ -12,3 +14,5 @@ en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
 (a) 10.12.255.255
 (b) Première adresse - 10.12.0.1
 	Dernière adresse - 10.12.255.254
+
+// en0 = Interface Ethernet

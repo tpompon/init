@@ -3,3 +3,5 @@ Session graphique :
 
 Session SSH :
 - Utiliser la commande : ssh user:password@ip
+
+# Pour switch d'un user à un autre dans le terminal, utiliser "su [login]" puis entrer le password

@@ -1,1 +1,1 @@
-cat /etc/resolv.conf
+L'adresse IP du serveur DNS utilisé se trouve dans le fichier accessible par ce chemin d'accès : /etc/resolv.conf

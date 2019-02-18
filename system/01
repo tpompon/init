@@ -1,1 +1,3 @@
-Chemin : /etc/debian_version
+Chemin d'accès : /etc/debian_version
+
+# cat /etc/debian_version
