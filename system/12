@@ -1,1 +1,4 @@
-sudo du -h /var
+du -h /var
+
+# du : Estimate file space usage
+# -h : Print sizes in human readable format

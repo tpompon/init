@@ -1,1 +1,3 @@
-sudo tail -f /var/log/syslog &
+tail -f /var/log/syslog &
+
+# & : Used to run a command in background

@@ -1,18 +1,16 @@
 ifconfig en0
 
-#######################################################################
+# en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+#		options=10b<RXCSUM,TXCSUM,VLAN_HWTAGGING,AV>
+#		ether 10:dd:b1:c1:60:7d
+#		inet6 fe80::ca6:3021:a8c8:8da0%en0 prefixlen 64 secured scopeid 0x4
+#		inet 10.12.4.22 netmask 0xffff0000 broadcast 10.12.255.255
+#		nd6 options=201<PERFORMNUD,DAD>
+#		media: autoselect (1000baseT <full-duplex>)
+#		status: active
 
-en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
-		options=10b<RXCSUM,TXCSUM,VLAN_HWTAGGING,AV>
-		ether 10:dd:b1:c1:60:7d
-		inet6 fe80::ca6:3021:a8c8:8da0%en0 prefixlen 64 secured scopeid 0x4
-		inet 10.12.4.22 netmask 0xffff0000 broadcast 10.12.255.255
-		nd6 options=201<PERFORMNUD,DAD>
-		media: autoselect (1000baseT <full-duplex>)
-		status: active
+# (a) 10.12.255.255
+# (b) Première adresse - 10.12.0.1
+#			Dernière adresse - 10.12.255.254
 
-(a) 10.12.255.255
-(b) Première adresse - 10.12.0.1
-	Dernière adresse - 10.12.255.254
-
-// en0 = Interface Ethernet
+# en0 : Ethernet Interface

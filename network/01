@@ -1,1 +1,3 @@
 ifconfig -l
+
+# -l : List only the names of the interfaces without any detail

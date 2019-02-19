@@ -1,1 +1,3 @@
 ssh user:password@ip
+
+# Command that allows you to connect in SSH on the machine

@@ -1,1 +1,4 @@
-sudo adduser
+adduser username
+
+# adduser : Create a new user
+# Replace "username" by the desired name for the new user

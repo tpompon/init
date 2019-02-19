@@ -1,1 +1,3 @@
 lsblk
+
+# Prints all block devices (except RAM disks)

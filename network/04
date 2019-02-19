@@ -1,6 +1,4 @@
 netstat -nr
 
-######################################
-
--n : Show network addresses as numbers
--r : Show the routing tables
+# -n : Show network addresses as numbers
+# -r : Show the routing tables

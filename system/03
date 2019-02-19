@@ -1,6 +1,4 @@
-# sudo hostname systemNameWanted (commande permettant de renommer le système)
+# hostname newSystemName (last command to rename the system)
 
-# Pour rendre cela permanent il faut modifier le fichier /etc/hostname pour qu'il
-ne contienne que le nom souhaité
-
-# Il faut aussi remplacer l'ancien nom par le nouveau dans le fichier /etc/hosts
+# To make it permanent, update the file ""/etc/hostname" with : newSystemName
+# And replace the oldSystemName by newSystemName in /etc/hosts

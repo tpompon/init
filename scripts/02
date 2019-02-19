@@ -1,21 +1,21 @@
 
-# Check validité commande
+# Check if the command is valid
 if [ $# != 1 ]; then
 	echo "Usage: $0 [user] (delete user while logged in)"
 fi
 
-# Vérifie si l'utilisateur est connecté
+# Check if the user is logged on
 if ; then
 
 fi
 
-# Kill des processus
+# Kill processes
 killall -KILL -u $1
 
-# Bloque l'utilisateur
+# Block the user
 sudo passwd -l $1
 
-# Suppresion de l'utilisateur
+# Delete the user
 userdel -r $1
 
-https://technique.arscenic.org/commandes-linux-de-base/la-gestion-des-utilisateurs/article/ajout-et-suppression-d-utilisateurs
+# Source: https://goo.gl/79rdf4

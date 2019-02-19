@@ -1,1 +1,4 @@
 dig @8.8.8.8 slash16.org
+
+# dig is used to interrogate DNS servers
+# Usage: dig @server name
