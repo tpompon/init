@@ -1,1 +1,3 @@
 ifconfig -l
+
+# Displays the names of the network interfaces without any details
