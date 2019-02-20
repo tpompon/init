@@ -1,1 +1,4 @@
 df -h
+
+# df : Report file system disk space usage
+# -h : Print sizes in human readable format

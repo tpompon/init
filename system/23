@@ -1,7 +1,8 @@
-Session graphique :
-- Sur la page de login, entrer l'identifiant et le mot de passe
+# - Graphic Session -
+# On the login page : enter the username and the password
 
-Session SSH :
-- Utiliser la commande : ssh user:password@ip
+# - SSH Session -
+# In the terminal, use the following command : ssh user:password@ip
+# You need to replace [user] [password] [ip] with your values
 
-# Pour switch d'un user à un autre dans le terminal, utiliser "su [login]" puis entrer le password
+# NB: You can use the following command to switch to another user : su user

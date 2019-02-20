@@ -1,3 +1,6 @@
 cat /etc/passwd | cut -d ":" -f1,3,7
 
-https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/
+# Before making the script, you need to understand the different parts
+# of the file "/etc/passwd"
+
+# Source: https://goo.gl/L3U2Sc

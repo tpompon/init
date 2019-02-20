@@ -1,1 +1,3 @@
 apt list --installed
+
+# List installed packages on the machine

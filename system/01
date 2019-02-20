@@ -1,3 +1,2 @@
-Chemin d'accès : /etc/debian_version
-
-# cat /etc/debian_version
+# Installed version of Debian is stored in "/etc/debian_version"
+# Command used to display it : cat /etc/debian_version

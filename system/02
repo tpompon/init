@@ -1,1 +1,3 @@
-sudo hostname systemNameWanted
+hostname newSystemName
+
+# hostname is used to rename the system

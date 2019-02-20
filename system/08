@@ -1,1 +1,2 @@
-Fichier contenant les clés des machines autorisées : ~/.ssh/authorized_keys
+# File containing the RSA keys that are authorized
+# to connect via SSH : "~/.ssh/authorized_keys"
