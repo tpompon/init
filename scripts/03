@@ -1,69 +1,47 @@
-# --------------------------------------------------------------------------- #
-# ------------------------------ 42PhotoFinder ------------------------------ #
-# --------------------------------------------------------------------------- #
-
-# - Parameters (modifiable) - #
-
-FOLDER_PATH=~/Desktop
-FOLDER_NAME=42PhotoFinder
-
-# - Script (don't touch) - #
-
-FULL_PATH=${FOLDER_PATH}/${FOLDER_NAME}
-
+# Colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
-NC='\033[0m'
+NC='\0330m'
 
-CHECK=1
-NB_ARGS=$#
-NB_ERR=0
+ft_menu ()
+{
+echo "
+DEBIAN UTILS MENU
 
-if [[ ( "$#" -lt 1 ) ]]
-then
-	echo "\n${RED}Usage:${NC} ${GREEN}42PhotoFinder${NC} login1 [login2] [login3] ...\n"
-	exit
-fi
+1 - Create an user
+2 - List users logged
+3 - Install OhMyZsh
+4 - Debian Version
+5 - Uptime
 
-mkdir ${FULL_PATH} &>/dev/null
+Q - Quit
 
-echo
+Choice :"
 
-while (( "$#" >= 1))
-do
-	let "CHECK = 1"
-	if cp /sgoinfre/photos_students/2013/$1.JPG ${FULL_PATH} &>/dev/null; then let "CHECK = 0"; fi
-	if cp /sgoinfre/photos_students/2014/$1.JPG ${FULL_PATH} &>/dev/null; then let "CHECK = 0"; fi
-	if cp /sgoinfre/photos_students/2015/$1.JPG ${FULL_PATH} &>/dev/null; then let "CHECK = 0"; fi
-	if cp /sgoinfre/photos_students/2016/$1.JPG ${FULL_PATH} &>/dev/null; then let "CHECK = 0"; fi
-	if cp /sgoinfre/photos_students/2017/$1.JPG ${FULL_PATH} &>/dev/null; then let "CHECK = 0"; fi
-	if cp /sgoinfre/photos_students/2018/$1.JPG ${FULL_PATH} &>/dev/null; then let "CHECK = 0"; fi
-	if [[ ( "$1" == "xniel" ) ]]; then
-		cd ${FULL_PATH}
-		curl -s https://i.imgur.com/uWQQJcz.jpg > xniel.JPG
-		echo "${RED}♥${NC} ${YELLOW}$1${NC}  		${PURPLE}- photo has been copied in${NC} ${CYAN}${FULL_PATH}${NC}"
-	fi
-	if [[ ( "$1" == "bunny" ) ]]; then
-		cd ${FULL_PATH}
-		curl -s https://i.imgur.com/km8tfNZ.jpg > bunny.JPG
-		echo "🥚  ${YELLOW}$1${NC}  		${PURPLE}- photo has been copied in${NC} ${CYAN}${FULL_PATH}${NC}"
-	fi
-
-	if [[ ( CHECK -eq 1 ) && ( $1 != "xniel" ) && ( $1 != "bunny" ) ]]; then
-		echo "${RED}✗${NC} ${YELLOW}$1${NC}  		${RED}- photo doesn't exist or bad login${NC}"
-		let "NB_ERR += 1"
-	elif [[ ( $1 != "xniel" ) && ( $1 != "bunny" ) ]]; then
-		echo "${GREEN}✓${NC} ${YELLOW}$1${NC}  		${GREEN}- photo has been copied in${NC} ${CYAN}${FULL_PATH}${NC}"
-	fi
-	shift
-done
-
-let "NB_ARGS -= NB_ERR"
-echo "\nMade with ${RED}♥${NC} by tpompon & pforciol					     ${GREEN}${NB_ARGS} ✓    ${NC}${RED}${NB_ERR} ✗${NC}\n"
-
-# --------------------------------------------------------------------------- #
-# -------------------- Made with ♥ by tpompon & pforciol -------------------- #
-# --------------------------------------------------------------------------- #
+read option
+    case $option in
+    1)
+        echo "\nUsername: " ; read username ; adduser $username ; ft_menu;;
+    2)
+        who -q
+        echo "\nLaunch 2\n" ; ft_menu;;
+    3)
+        sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+        echo "\nLaunch 3\n" ; ft_menu;;
+    4)
+        cat /etc/debian_version
+        echo "\nLaunch 4\n" ; ft_menu;;
+    5)
+        uptime -p
+        echo "\nLaunch 5\n" ; ft_menu;;
+    Q)
+        exit;;
+    *)
+        echo "\nerror\n"
+        ft_menu;;
+        esac
+}
+ft_menu
