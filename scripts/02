@@ -1,21 +1,31 @@
+# Colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+NC='\033[0m'
 
 # Check if the command is valid
 if [ $# != 1 ]; then
 	echo "Usage: $0 [user] (delete user while logged in)"
 fi
 
-# Check if the user is logged on
-if ; then
+# Block the user (-l : lock)
+sudo passwd -l $1 &>/dev/null
 
+# Check if the user is logged on and close all processes launched
+if [[ $(sudo pgrep -u $1) ]]; then
+	sudo pkill -9 -u 'u1' &>/dev/null
+	echo "\n${RED}User is logged on${NC}"
+	echo "\n${RED}Closing all the processes...${NC}"
+else
+	echo "${RED}User isn't logged on${NC}"
 fi
 
-# Kill processes
-killall -KILL -u $1
-
-# Block the user
-sudo passwd -l $1
-
-# Delete the user
-userdel -r $1
+# Delete the user and his home directory
+echo "\n${RED}Deleting home directory...${NC}"
+sudo userdel -r $1 &>/dev/null
+echo "\n${RED}Deleting Cron Tasks...${NC}"
+sudo crontab -r -u $1 &>/dev/null
+echo "\n<${CYAN}$1${NC}> ${GREEN}has been deleted${NC}"
 
 # Source: https://goo.gl/79rdf4

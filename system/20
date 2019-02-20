@@ -1,4 +1,4 @@
 cut -f1 -d: /etc/passwd
 
 # Keep the first field on each lines of "/etc/passwd" to display
-# all the existing users on the machine
+# all the existing users on the device

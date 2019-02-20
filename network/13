@@ -1,3 +1,5 @@
-253.1.51.10.in-addr.arpa domain name pointer dhcp.42.fr.
+# Command used to find IP assigned by the DHCP server :
+# ipconfig getoption en0 server_identifier
 
-# TO CHECK
+# Command used to get the hostname with the ip obtained previously
+nslookup 10.51.1.253

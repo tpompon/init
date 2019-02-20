@@ -1,2 +1,5 @@
 # File containing the RSA keys that are authorized
 # to connect via SSH : "~/.ssh/authorized_keys"
+
+# Use this command to display authorized RSA keys :
+cat ~/.ssh/authorized_keys

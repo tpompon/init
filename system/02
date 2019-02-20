@@ -1,3 +1,5 @@
 hostname newSystemName
 
 # hostname is used to rename the system
+# Use only hostname to see the actual name
+# If you don't have the rights to use it, use the prefix 'sudo'

@@ -1,3 +1,4 @@
-kill $!
+kill -9 $!
 
 # Kill the last process
+# If you don't have the rights to use it, use the prefix 'sudo'

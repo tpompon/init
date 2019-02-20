@@ -1,6 +1,9 @@
-cat /etc/passwd | cut -d ":" -f1,3,7
+awk -F ':' '{print $1,$3,$6}' /etc/passwd | column -t
 
 # Before making the script, you need to understand the different parts
 # of the file "/etc/passwd"
 
-# Source: https://goo.gl/L3U2Sc
+# I used awk to take only the fields I wanted (1 (login), 3 (UID), 6 (Path))
+# ':' is the delimiter, you can see the original file with : cat /etc/passwd
+
+# Source: https://goo.gl/L3U2Sc (meaning of the fields)

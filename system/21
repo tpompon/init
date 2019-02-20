@@ -1,4 +1,4 @@
 grep bash /etc/passwd | cut -f1 -d:
 
 # Keep only the bash users and keep the first field on each lines
-# of "/etc/passwd" to display all the real users on the machine
+# of "/etc/passwd" to display all the real users on the device

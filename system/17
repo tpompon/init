@@ -1,3 +1,4 @@
 ssh user:password@ip
 
-# Command that allows you to connect in SSH on the machine
+# Command that allows you to connect in SSH on the device
+# Better use 'user@ip' and enter the password in the hidden field

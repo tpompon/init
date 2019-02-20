@@ -1,3 +1,3 @@
 apt list --installed
 
-# List installed packages on the machine
+# List all the installed packages on the device

@@ -22,7 +22,7 @@ CHECK=1
 NB_ARGS=$#
 NB_ERR=0
 
-if [[ ( "$#" -lt 1) ]]
+if [[ ( "$#" -lt 1 ) ]]
 then
 	echo "\n${RED}Usage:${NC} ${GREEN}42PhotoFinder${NC} login1 [login2] [login3] ...\n"
 	exit
@@ -42,12 +42,12 @@ do
 	if cp /sgoinfre/photos_students/2017/$1.JPG ${FULL_PATH} &>/dev/null; then let "CHECK = 0"; fi
 	if cp /sgoinfre/photos_students/2018/$1.JPG ${FULL_PATH} &>/dev/null; then let "CHECK = 0"; fi
 	if [[ ( "$1" == "xniel" ) ]]; then
-		cd ${FULL_PATH} 
+		cd ${FULL_PATH}
 		curl -s https://i.imgur.com/uWQQJcz.jpg > xniel.JPG
 		echo "${RED}♥${NC} ${YELLOW}$1${NC}  		${PURPLE}- photo has been copied in${NC} ${CYAN}${FULL_PATH}${NC}"
 	fi
 	if [[ ( "$1" == "bunny" ) ]]; then
-		cd ${FULL_PATH} 
+		cd ${FULL_PATH}
 		curl -s https://i.imgur.com/km8tfNZ.jpg > bunny.JPG
 		echo "🥚  ${YELLOW}$1${NC}  		${PURPLE}- photo has been copied in${NC} ${CYAN}${FULL_PATH}${NC}"
 	fi

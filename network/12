@@ -1,1 +1,4 @@
 ipconfig getoption en0 server_identifier
+
+# Displays the IP assigned by the DHCP Server for the network interface en0
+# en0 : Ethernet Interface

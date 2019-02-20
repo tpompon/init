@@ -1,1 +1,3 @@
 traceroute slash16.org
+
+# Print the route packets trace to network host
