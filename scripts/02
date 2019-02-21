@@ -37,10 +37,3 @@ ft_menu ()
       esac
 }
 ft_menu
-
-
-
-# Check if the command is valid
-if [ $# != 1 ]; then
-	echo "Usage: $0 [user] (delete user while logged in)"
-fi
