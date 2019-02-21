@@ -4,28 +4,43 @@ GREEN='\033[0;32m'
 CYAN='\033[0;36m'
 NC='\033[0m'
 
+# Menu
+ft_menu ()
+{
+  echo "\n- Enter username to delete :"
+  echo "${RED}(Warning: this will delete the user and his home directory)${NC}\n"
+  read username 2> /dev/null
+
+  output=$( getent passwd $username )
+  if [ -z "$output" ]
+  then
+    echo "\n${RED}User ${CYAN}$username ${RED}doesn't exist. Try again.${NC}" ;
+    ft_menu
+	else
+  	echo -n "\n${GREEN}User found. " ; sleep 0.5 ; echo -n "${GREEN}[x]${NC}\n" ; sleep 0.5 ;
+  fi
+
+  echo "\nAre you sure, you want to delete ${CYAN}$username${NC} and all the files ? (Y/n)\n"
+  read option 2> /dev/null
+  case $option in
+    Y)
+    	echo -n "\n${RED}Deleting ${CYAN}$username ${RED}and his home directory";
+      sleep 0.5; echo -n "."; sleep 0.5; echo -n "."; sleep 0.5; echo -n ".${NC}";
+      userdel -rf $username 2> /dev/null; sleep 2;
+      echo "\n${GREEN}User ${CYAN}"$username" ${GREEN}has been deleted successfully${NC}";
+      ft_menu;;
+    n)
+      echo "\n${RED}Cancelled${NC}"; ft_menu;;
+    *)
+      echo "${RED}error${NC}"
+      ft_menu;;
+      esac
+}
+ft_menu
+
+
+
 # Check if the command is valid
 if [ $# != 1 ]; then
 	echo "Usage: $0 [user] (delete user while logged in)"
 fi
-
-# Block the user (-l : lock)
-sudo passwd -l $1 &>/dev/null
-
-# Check if the user is logged on and close all processes launched
-if [[ $(sudo pgrep -u $1) ]]; then
-	sudo pkill -9 -u 'u1' &>/dev/null
-	echo "\n${RED}User is logged on${NC}"
-	echo "\n${RED}Closing all the processes...${NC}"
-else
-	echo "${RED}User isn't logged on${NC}"
-fi
-
-# Delete the user and his home directory
-echo "\n${RED}Deleting home directory...${NC}"
-sudo userdel -r $1 &>/dev/null
-echo "\n${RED}Deleting Cron Tasks...${NC}"
-sudo crontab -r -u $1 &>/dev/null
-echo "\n<${CYAN}$1${NC}> ${GREEN}has been deleted${NC}"
-
-# Source: https://goo.gl/79rdf4

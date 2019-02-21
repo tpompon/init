@@ -4,44 +4,48 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
-NC='\0330m'
+NC='\033[0m'
 
+# Menu Utils
 ft_menu ()
 {
+
+echo "\n"
 echo "
-DEBIAN UTILS MENU
+${CYAN}1${NC} Create an user
+${CYAN}2${NC} List users logged
+${CYAN}3${NC} Install OhMyZsh
+${CYAN}4${NC} Debian Version
+${CYAN}5${NC} Uptime
+${CYAN}6${NC} Informations Domain
 
-1 - Create an user
-2 - List users logged
-3 - Install OhMyZsh
-4 - Debian Version
-5 - Uptime
+${RED}Q${NC} Quit" | column
 
-Q - Quit
-
-Choice :"
+echo "\n${YELLOW}Select:${NC}\n"
 
 read option
-    case $option in
-    1)
-        echo "\nUsername: " ; read username ; adduser $username ; ft_menu;;
-    2)
-        who -q
-        echo "\nLaunch 2\n" ; ft_menu;;
-    3)
-        sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-        echo "\nLaunch 3\n" ; ft_menu;;
-    4)
-        cat /etc/debian_version
-        echo "\nLaunch 4\n" ; ft_menu;;
-    5)
-        uptime -p
-        echo "\nLaunch 5\n" ; ft_menu;;
-    Q)
-        exit;;
-    *)
-        echo "\nerror\n"
-        ft_menu;;
-        esac
+   case $option in
+   1)
+       echo "\nUsername: " ; read username ; useradd $username ; ft_menu;;
+   2)
+       who -q
+       echo "\nLaunch 2\n" ; ft_menu;;
+   3)
+       sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+       echo "\nLaunch 3\n" ; ft_menu;;
+   4)
+       cat /etc/debian_version
+       echo "\nLaunch 4\n" ; ft_menu;;
+   5)
+       uptime -p
+       echo "\nLaunch 5\n" ; ft_menu;;
+   6)
+       apt install whois ; echo "\nDomain: " ; read domain ; whois $domain ; ft_menu;;
+   Q)
+       exit;;
+   *)
+       echo "\nerror\n"
+       ft_menu;;
+       esac
 }
 ft_menu
