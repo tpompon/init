@@ -26,7 +26,7 @@ ft_menu ()
     Y)
     	echo -n "\n${RED}Deleting ${CYAN}$username ${RED}and his home directory";
       sleep 0.5; echo -n "."; sleep 0.5; echo -n "."; sleep 0.5; echo -n ".${NC}";
-      userdel -rf $username 2> /dev/null; sleep 2;
+      sudo userdel -rf $username 2> /dev/null; sleep 2;
       echo "\n${GREEN}User ${CYAN}"$username" ${GREEN}has been deleted successfully${NC}";
       ft_menu;;
     n)

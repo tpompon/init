@@ -24,28 +24,24 @@ ${RED}Q${NC} Quit" | column
 echo "\n${YELLOW}Select:${NC}\n"
 
 read option
-   case $option in
-   1)
-       echo "\nUsername: " ; read username ; useradd $username ; ft_menu;;
-   2)
-       who -q
-       echo "\nLaunch 2\n" ; ft_menu;;
-   3)
-       sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-       echo "\nLaunch 3\n" ; ft_menu;;
-   4)
-       cat /etc/debian_version
-       echo "\nLaunch 4\n" ; ft_menu;;
-   5)
-       uptime -p
-       echo "\nLaunch 5\n" ; ft_menu;;
-   6)
-       apt install whois ; echo "\nDomain: " ; read domain ; whois $domain ; ft_menu;;
-   Q)
-       exit;;
-   *)
-       echo "\nerror\n"
-       ft_menu;;
-       esac
+    case $option in
+    1)
+        echo "\nUsername: " ; read username ; sudo useradd $username ; echo "${GREEN}Utilisateur ${CYAN}$username ${GREEN}has been created${NC}" ; sleep 2 ; ft_menu;;
+    2)
+        echo "\n" ; echo "${CYAN}Users logged on :${NC}" ; who -q ; sleep 2 ; ft_menu;;
+    3)
+        echo "\n" ; sudo apt install zsh ; echo "\n${GREEN}OhMyZsh is up to date${NC}\n" ; sleep 2 ; ft_menu;;
+    4)
+        echo "\n" ; echo "${CYAN}Debian Version :${NC}" ; cat /etc/debian_version ; sleep 2 ; ft_menu;;
+    5)
+        echo "\n" ; echo "${CYAN}Uptime :${NC}" ; uptime -p ; sleep 2 ; ft_menu;;
+    6)
+        echo "\n" ; sudo apt-get whois  2> /dev/null ; echo "\nDomain: " ; read domain ; whois $domain  2> /dev/null ; sleep 2 ; ft_menu;;
+    Q)
+        exit;;
+    *)
+        echo "\n${RED}error${NC}\n" ; sleep 2 ; 
+        ft_menu;;
+        esac
 }
 ft_menu
