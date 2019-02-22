@@ -1,5 +1,10 @@
 # Command used to find IP assigned by the DHCP server :
 # ifconfig en0 | grep "inet " | cut -d " " -f1,2
 
+Server:10.51.1.42
+Address:10.51.1.42#53
+
+21.4.12.10.in-addr.arpaname =				 e2r4p21.42.fr.
+
 # Command used to get the hostname with the ip obtained previously
-nslookup 10.12.4.21
+# nslookup 10.12.4.21
