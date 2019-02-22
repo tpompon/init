@@ -1,4 +1,3 @@
 # hostname newSystemName (last command to rename the system)
 
 # To make it permanent, update the file "/etc/hostname" with : newSystemName
-# And replace the <oldSystemName> by <newSystemName> in "/etc/hosts"

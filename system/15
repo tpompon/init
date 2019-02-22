@@ -1,4 +1,4 @@
-kill -9 $!
+pkill -x tail
 
 # Kill the last process
 # If you don't have the rights to use it, use the prefix 'sudo'

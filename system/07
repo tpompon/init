@@ -1,3 +1,4 @@
 cat /var/run/sshd.pid
 
 # Figure out the PID of the SSHD service
+# Another possibility : systemctl status ssh | grep PID

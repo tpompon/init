@@ -1,5 +1,5 @@
 # Command used to find IP assigned by the DHCP server :
-# ipconfig getoption en0 server_identifier
+# ifconfig en0 | grep "inet " | cut -d " " -f1,2
 
 # Command used to get the hostname with the ip obtained previously
-nslookup 10.51.1.253
+nslookup 10.12.4.21
