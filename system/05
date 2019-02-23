@@ -1,3 +1,4 @@
 systemctl status ssh
 
- # Determine the state of the SSH service
+# Determine the state of the SSH service
+# Use sudo if you don't have the rights

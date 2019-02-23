@@ -1,3 +1,4 @@
 systemctl restart ssh
 
 # Reboots the SSH service
+# Use sudo if you don't have the rights

@@ -2,7 +2,7 @@
 ifconfig en0
 
 # (a) Displays the broadcast network address
-ifconfig en0 | grep -o 'broadcast.*' | cut -d " " -f5,6
+ifconfig en0 | grep -o 'broadcast.*'
 
 # (b) Displays ip on the same subnet
 arp -a | cut -d "(" -f2 | cut -d ")" -f1
